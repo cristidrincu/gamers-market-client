@@ -8,7 +8,7 @@ class LandingPage extends Component {
           <div className="container-fluid">
             <div className="row">
                 <div className="col-lg-12">
-                  <ul className="list-group list-group-horizontal">
+                  <ul style = {{backgroundColor: "white"}} className="list-group list-group-horizontal">
                     <li className="list-group-item"><small>Licitatii ce se termina astazi</small></li>
                     <li className="list-group-item"><small>Incepe sa vinzi prin gamers market</small></li>
                     <li className="list-group-item"><small>Placi grafice</small></li>

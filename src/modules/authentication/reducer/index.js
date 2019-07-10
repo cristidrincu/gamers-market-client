@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   loading: false
 };
 
-export default (action, state = INITIAL_STATE) => {
+export default (state = INITIAL_STATE, action) => {
   let error;
   switch(action.type) {
     case actionTypes.UNAUTHENTICATE:
