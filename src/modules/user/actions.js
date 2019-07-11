@@ -6,7 +6,7 @@ import * as actionTypes from './actionTypes';
 export const loadFormData = () => {
 	return {
 		type: actionTypes.LOAD_FORM_DATA,
-		payload: JSON.parse(localStorage.getItem('user'))
+		payload: JSON.parse(localStorage.getItem('gamer'))
 	};
 };
 
@@ -32,19 +32,6 @@ export const updateUser = formFields => {
 					}
 			});
 	};
-};
-
-export const updateDeveloper = devFormFields => {
-	return dispatch => {
-		return axios.put('/administrator/developer', devFormFields).then(response => {
-			if (response.status === 200) {
-				dispatch(updateDeveloperSuccess(response.data));
-			}
-		}).catch(responseWithError => {
-			dispatch(updateDeveloperFailure(responseWithError.data.message));
-			throw new Error(responseWithError);
-		});
-	}
 };
 
 export const updateUserRole = (email, { role }) => {
@@ -81,7 +68,7 @@ export const updateUserSuccess = data => {
 
 		}
 	};
-	localStorage.setItem('user', JSON.stringify(_user));
+	localStorage.setItem('gamer', JSON.stringify(_user));
 	
 	return {
 		type: actionTypes.USER_UPDATE_SUCCESS,
@@ -94,20 +81,6 @@ export const updateUserFailure = error => {
 		type: actionTypes.USER_UPDATE_FAILURE,
 		payload: error
 	};
-};
-
-export const updateDeveloperSuccess = data => {
-	return {
-		type: actionTypes.DEVELOPER_UPDATE_SUCCESS,
-		payload: data
-	}
-};
-
-export const updateDeveloperFailure = error => {
-	return {
-		type: actionTypes.DEVELOPER_UPDATE_ERROR,
-		payload: error
-	}
 };
 
 export const updateUserRoleSuccess = data => {
@@ -150,26 +123,6 @@ export const updateUserPasswordFailure = error => {
 		type: actionTypes.USER_PASSWORD_UPDATE_FAILURE,
 		payload: error
 	};
-};
-
-export const getUserDetailsForSupport = userId => {
-	return dispatch => {
-		return axios.get(`/support/user/${userId}`)
-			.then(response => {
-				if (response.status === 200) {
-					dispatch(getUserDetailsSuccess(response.data));
-				}
-			}).catch(error => {
-				dispatch(getUserDetailsError(error.response.data));
-			});
-	}
-};
-
-export const gettingUserDetails = () => {
-	return {
-		type: actionTypes.GETTING_USER_DETAILS,
-		payload: null
-	}	
 };
 
 export const getUserDetailsSuccess = data => {
@@ -355,57 +308,5 @@ export const resetUserDetailsState = () => {
 	return {
 		type: actionTypes.RESET_USER_DETAILS_STATE,
 		payload: null
-	}
-};
-
-export const saveUserProductNoteRedux = (productKey, newProductNote) => {
-	return (dispatch, getState) => {
-		let products = getState().userProducts.products[productKey];
-		let productNotes = getState().userProducts.products[productKey].product_notes.slice();
-		productNotes.push(newProductNote);
-		products.product_notes = productNotes;
-
-		return {
-			type: actionTypes.SAVE_NOTE_PRODUCT_REDUX,
-			payload: products
-		}
-	}
-};
-
-export const updateUserProductNoteRedux = (productKey, noteId, formValues) => {
-	return (dispatch, getState) => {
-		let products = getState().userProducts.products[productKey];
-		let productNotes = getState().userProducts.products[productKey].product_notes;
-
-		products.product_notes = productNotes.map(productNote => {
-			if (productNote.id !== noteId) {
-				return productNote;
-			}
-
-			return {
-				...productNote,
-				...formValues
-			}
-		});
-
-		return {
-			type: actionTypes.UPDATE_PRODUCT_NOTE_REDUX,
-			payload: products
-		}
-	}
-};
-
-export const removeUserProductNoteRedux = (productKey, noteId) => {
-	return (dispatch, getState) => {
-		let products = getState().userProducts.products[productKey];
-		let productNotes = getState().userProducts.products[productKey].product_notes;
-		products.product_notes = productNotes.filter(productNote => {
-			return productNote.id !== noteId;
-		});
-
-		return {
-			type: actionTypes.DELETE_PRODUCT_NOTE_REDUX,
-			payload: products
-		}
 	}
 };

@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^5.0.x",
     "react-router": "^3.0.x",
     "react-router-redux": "^4.0.x",
+    "reactstrap": "^8.0.0",
     "redux": "^3.6.x",
     "redux-form": "^6.6.x",
     "redux-mock-store": "^1.2.x",
@@ -18,7 +20,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --env.NODE_ENV=development",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

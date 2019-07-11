@@ -24,7 +24,7 @@ class LandingPage extends Component {
                       <h3>Componente high-end. </h3>
                       <h1>Pentru gaming. Garantate si verificate.</h1>
                       <hr/>
-                      <p>Peste 50.000 de componente high-end pentru gaming adaugate in fiecare luna. Aproximativ 500.000 de vizitatori noi in fiecare luna</p>
+                      <p>Peste 50.000 de oferte pentru componente de gaming adaugate in fiecare luna. Aproximativ 500.000 de vizitatori noi in fiecare luna.</p>
                     </div>
                   </div>
                 </div>

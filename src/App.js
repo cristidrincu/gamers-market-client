@@ -4,8 +4,6 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import navigationHelper from './helpers/navigation';
 import Nav from './components/nav';
-// import ModalProfile from './modal-profile';
-// import ModalPassword from './modal-password';
 import Utils from './services/Utils';
 
 class App extends Component {
@@ -26,10 +24,7 @@ class App extends Component {
     return (
         <div className="w-100 h-100">
           <Nav {...this.props} />
-
           { React.cloneElement(this.props.children, this.props) }
-
-          {/*{ this.props.authentication.status === 'authenticated' ? <div><ModalProfile /><ModalPassword /></div> : null }*/}
         </div>
     );
   }
@@ -38,8 +33,8 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     authentication: state.authentication ? state.authentication : null,
-    user: state.user ? state.user.user : null
+    user: state.user ? state.user.gamer : null
   }
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, null)(App);

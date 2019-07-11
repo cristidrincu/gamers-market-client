@@ -12,10 +12,10 @@ const appReducer = combineReducers({
 	form: reduxFormReducer,
 	routing: routerReducer,
 	authentication: AuthenticationReducer,
+  user: UserProfileReducer,
 	// registration: UserRegistrationReducer,
 	// passwordRecovery: UserPasswordRecoveryReducer,
 	// passwordReset: UserPasswordResetReducer,
-	// user: UserProfileReducer,
 	// userDetails: UserDetailsReducer
 });
 

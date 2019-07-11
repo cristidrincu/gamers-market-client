@@ -5,13 +5,14 @@ import {
 	UNAUTHENTICATE, AUTHENTICATION_SUCCESS, AUTHENTICATION_FAILURE
 } from './actionTypes';
 
-export const authenticateUser = (formFields) => {
+export const authenticateGamer = (formFields) => {
 	return dispatch => {
-		return axios.post('/gamers/authenticate', formFields)
+		return axios.post('/accounts/authenticate', formFields)
 			.then(response => {
 				dispatch(authenticationSuccess(response.data));
 			})
 			.catch(result => {
+				console.log(result);
 				if (result.response.data.validationErrors) {
 					throw new SubmissionError({ account: { password: 'Incorrect password' } });
 				} else {
@@ -21,10 +22,9 @@ export const authenticateUser = (formFields) => {
 	};
 };
 
-export const unauthenticateUser = () => {
+export const unauthenticateGamer = () => {
 	localStorage.removeItem('authenticationToken');
-	localStorage.removeItem('user');
-	localStorage.removeItem('product');
+	localStorage.removeItem('gamer');
 	
 	return (dispatch) => {
 		dispatch({
@@ -37,28 +37,17 @@ export const unauthenticateUser = () => {
 };
 
 export const authenticationSuccess = data => {
-	let _user = {
+	let _gamer = {
 		account: {
-			email: data.user.email,
-			secondaryEmail: data.user.secondaryEmail,
-			role: data.user.role
+			email: data.gamer.email
 		},
 		contact: {
-			firstName: data.user.firstName,
-			lastName: data.user.lastName,
-			phoneNumber: data.user.phoneNumber
-		},
-		company: {
-			name: data.user.companyName,
-			marketSector: data.user.companyMarketSector,
-			city: data.user.companyCity,
-			country: data.user.companyCountry,
-			address: data.user.companyAddress,
-			nrOfEmployees: data.user.companyNrOfEmployees
+			firstName: data.gamer.firstName,
+			lastName: data.gamer.lastName
 		}
 	};
 	localStorage.setItem('authenticationToken', data.authenticationToken);
-	localStorage.setItem('user', JSON.stringify(_user));
+	localStorage.setItem('gamer', JSON.stringify(_gamer));
 	
 	return {
 		type: AUTHENTICATION_SUCCESS,

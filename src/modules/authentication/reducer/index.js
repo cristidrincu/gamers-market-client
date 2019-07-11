@@ -14,7 +14,7 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.AUTHENTICATION_SUCCESS:
       return {
         ...state,
-        status: 'authenticated',
+        status: true,
         error: null,
         loading: false
       };
@@ -22,7 +22,7 @@ export default (state = INITIAL_STATE, action) => {
       error = action.payload.data || { message: action.payload.message }; //2nd one is network or server down errors
       return {
         ...state,
-        status: 'failed',
+        status: false,
         error: error,
         loading: false
       };

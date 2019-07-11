@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { unauthenticateUser } from '../modules/authentication/actions';
+import { unauthenticateGamer } from '../modules/authentication/actions';
 import { showResetPasswordModal } from '../modules/password-reset/actions';
 import { showProfileModal } from '../modules/user/actions';
 
@@ -19,7 +19,7 @@ class NavUserActions extends Component {
 	}
 
 	logOut() {
-		return this.props.dispatch(unauthenticateUser());
+		return this.props.dispatch(unauthenticateGamer());
 	};
 	
 	render() {
