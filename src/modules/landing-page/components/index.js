@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router';
 import GigabyteLogo from "../../../assets/img/gigabyte-logo-png-transparent.png";
 import AmdLogo from "../../../assets/img/amd-logo-png-transparent.png";
 import AsusROGLogo from "../../../assets/img/asus_rog_logo.png";
@@ -83,9 +84,11 @@ class LandingPage extends Component {
                             <h4>HDD/SSD-uri</h4>
                         </div>
                         <div className="col-lg-2 brand-container">
+                          <Link to="hardware-offers/mouse">
                             <img width="150" height="150" src={RazerLogo}/>
                             <small>Vezi licitatii</small>
                             <h4>Tastaturi/Moushi</h4>
+                          </Link>
                         </div>
                     </div>
                 </div>
