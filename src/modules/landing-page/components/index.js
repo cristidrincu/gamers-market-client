@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import NvidiaLogo from "../../../assets/img/nvidia_logo_landing_page.jpg";
+import AmdLogo from "../../../assets/img/amd_logo_png_32281.png";
+import BenqLogo from "../../../assets/img/benq_logo_landing_page.jpeg";
+import AsRockLogo from "../../../assets/img/asrock_landing_page_logo.png";
+import HyperXLogo from "../../../assets/img/hyperx_logo_landing_page.png";
+import RazerLogo from "../../../assets/img/razer_logo_landing_page.png";
 
 class LandingPage extends Component {
 
@@ -29,7 +35,35 @@ class LandingPage extends Component {
                   </div>
                 </div>
               </div>
+          </div>
+          <div className="container">
+            <div className="row">
+                <div className="col-lg-2">
+                  <img src={NvidiaLogo}/>
+                  <p>Placi grafice</p>
+                </div>
+                <div className="col-lg-2">
+                  <img width="200" height="200" src={AmdLogo} />
+                  <p>Procesoare</p>
+                </div>
+                <div className="col-lg-2">
+                  <img width="190" height="190" src={BenqLogo} />
+                  <p>Monitoare</p>
+                </div>
+                <div className="col-lg-2">
+                  <img width="190" height="190" src={AsRockLogo} />
+                  <p>Placi de baza</p>
+                </div>
+                <div className="col-lg-2">
+                  <img width="190" height="190" src={HyperXLogo} />
+                  <p>SSD-uri</p>
+                </div>
+              <div className="col-lg-2">
+                <img width="190" height="190" src={RazerLogo} />
+                <p>Tastaturi</p>
+              </div>
             </div>
+          </div>
         </main>
     );
   }
