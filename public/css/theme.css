@@ -951,3 +951,19 @@ nav.navbar .navbar-brand:after {
 .inputValidationError {
     padding-bottom: 12px;
 }
+
+.brand-container:hover {
+    cursor: pointer;
+}
+
+.brand-container h4 {
+    text-align: left;
+}
+
+.brand-container small {
+    text-align: left;
+}
+
+.brand-container img {
+    margin-bottom: 50px;
+}
