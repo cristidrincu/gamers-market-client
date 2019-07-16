@@ -14,26 +14,26 @@ export default (dispatch) => {
 		return pathWithoutAuthorization.test(window.location.pathname);
 	});
 	
-	if (!authenticationToken && !userLocalStorage) {
-		if (!isOnPathWithoutAuthorization) {
-			browserHistory.push('/');
-		}
-	} else {
-		// axios.post('/users/token/valid', {'authenticationToken': authenticationToken})
-		// 	.then(response => {
-		// 		if (response.data.hasExpired) {
-		// 			dispatch(authActions.unauthenticateGamer());
-		// 		} else {
-		// 			dispatch({ type: AUTHENTICATION_SUCCESS, payload: null });
-		// 		}
-		// 	});
-		//
-		// if (isOnPathWithoutAuthorization && (userLocalStorage.account.role === UserRoles.CLIENT || userLocalStorage.account.role === UserRoles.DEVELOPER)) {
-		// 	browserHistory.push('/products');
-		// }
-		//
-		// if (isOnPathWithoutAuthorization && userLocalStorage.account.role === UserRoles.ADMINISTRATOR) {
-		// 	browserHistory.push('/user-management');
-		// }
-	}
+	// if (!authenticationToken && !userLocalStorage) {
+	// 	if (!isOnPathWithoutAuthorization) {
+	// 		browserHistory.push('/');
+	// 	}
+	// } else {
+	// 	// axios.post('/users/token/valid', {'authenticationToken': authenticationToken})
+	// 	// 	.then(response => {
+	// 	// 		if (response.data.hasExpired) {
+	// 	// 			dispatch(authActions.unauthenticateGamer());
+	// 	// 		} else {
+	// 	// 			dispatch({ type: AUTHENTICATION_SUCCESS, payload: null });
+	// 	// 		}
+	// 	// 	});
+	// 	//
+	// 	// if (isOnPathWithoutAuthorization && (userLocalStorage.account.role === UserRoles.CLIENT || userLocalStorage.account.role === UserRoles.DEVELOPER)) {
+	// 	// 	browserHistory.push('/products');
+	// 	// }
+	// 	//
+	// 	// if (isOnPathWithoutAuthorization && userLocalStorage.account.role === UserRoles.ADMINISTRATOR) {
+	// 	// 	browserHistory.push('/user-management');
+	// 	// }
+	// }
 }
