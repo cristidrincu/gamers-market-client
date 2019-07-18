@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router";
 import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
 import { unauthenticateGamer } from "../modules/authentication/actions";
@@ -30,7 +31,7 @@ class Nav extends Component {
 	render() {
 		return (
 			<nav className="navbar navbar-expand fixed-top">
-				<span className="navbar-brand" />
+				<Link to ="/"><span className="navbar-brand"/></Link>
 				{this.props.authentication && this.props.authentication.status ?
             <ul className="navbar-nav ml-auto">
               <Button color="link" onClick={() => console.log("Se incarca profilul tau")}>Profilul tau, { this.props.user ? this.props.user.contact.firstName : null }</Button>

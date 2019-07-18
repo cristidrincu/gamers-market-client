@@ -59,33 +59,33 @@ class LandingPage extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-2 brand-container">
-                            <img width="150" height="150" src={GigabyteLogo}/>
+                            <img width="150" height="150" src={GigabyteLogo} alt="Placi grafice"/>
                             <small>Vezi licitatii</small>
                             <h4>Placi grafice</h4>
                         </div>
                         <div className="col-lg-2 brand-container">
-                            <img width="150" height="150" src={AmdLogo}/>
+                            <img width="150" height="150" src={AmdLogo} alt="Procesoare"/>
                             <small>Vezi licitatii</small>
                             <h4>Procesoare</h4>
                         </div>
                         <div className="col-lg-2 brand-container">
-                            <img width="150" height="150" src={AsusROGLogo}/>
+                            <img width="150" height="150" src={AsusROGLogo} alt="Monitoare"/>
                             <small>Vezi licitatii</small>
                             <h4>Monitoare</h4>
                         </div>
                         <div className="col-lg-2 brand-container">
-                            <img width="150" height="150" src={AsRockLogo}/>
+                            <img width="150" height="150" src={AsRockLogo} alt="Placi de baza"/>
                             <small>Vezi licitatii</small>
                             <h4>Placi de baza</h4>
                         </div>
                         <div className="col-lg-2 brand-container">
-                            <img width="150" height="150" src={IntelLogo}/>
+                            <img width="150" height="150" src={IntelLogo} alt="HDD/SSD-uri"/>
                             <small>Vezi licitatii</small>
                             <h4>HDD/SSD-uri</h4>
                         </div>
                         <div className="col-lg-2 brand-container">
                           <Link to="hardware-offers/mouse">
-                            <img width="150" height="150" src={RazerLogo}/>
+                            <img width="150" height="150" src={RazerLogo} alt="Tastaturi/Moushi"/>
                             <small>Vezi licitatii</small>
                             <h4>Tastaturi/Moushi</h4>
                           </Link>
